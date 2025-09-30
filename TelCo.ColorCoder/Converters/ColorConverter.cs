@@ -1,17 +1,12 @@
 using System;
 using System.Drawing;
+using TelCo.ColorCoder.Domain;
 
 namespace TelCo.ColorCoder.Converters
 {
     internal class ColorConverter
     {
-        /// <summary>
-        /// Array of Major colors
-        /// </summary>
         private static Color[] colorMapMajor = new Color[] { Color.White, Color.Red, Color.Black, Color.Yellow, Color.Violet };
-        /// <summary>
-        /// Array of minor colors
-        /// </summary>
         private static Color[] colorMapMinor = new Color[] { Color.Blue, Color.Orange, Color.Green, Color.Brown, Color.SlateGray };
 
         /// <summary>
@@ -50,7 +45,7 @@ namespace TelCo.ColorCoder.Converters
         /// </summary>
         /// <param name="pair">Color pair with major and minor color</param>
         /// <returns></returns>
-        public  static int GetPairNumberFromColor(ColorPair pair)
+        public static int GetPairNumberFromColor(ColorPair pair)
         {
             // Find the major color in the array and get the index
             int majorIndex = -1;
@@ -82,7 +77,7 @@ namespace TelCo.ColorCoder.Converters
 
             // Compute pair number and Return  
             // (Note: +1 in compute is because pair number is 1 based, not zero)
-            return (majorIndex * colorMapMinor.Length) + (minorIndex + 1);
+            return majorIndex * colorMapMinor.Length + minorIndex + 1;
         }
     }
 }

@@ -1,5 +1,7 @@
 using System.Drawing;
+using TelCo.ColorCoder.Domain;
 using Xunit;
+using ColorConverter = TelCo.ColorCoder.Converters.ColorConverter;
 
 namespace TelCo.ColorCoder.Tests
 {
